@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./NavBar.module.css";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const ActionLink = ({ link = "#", text }) => {
   const linkRef = useRef();
