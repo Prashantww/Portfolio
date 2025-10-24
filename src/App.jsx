@@ -1,7 +1,15 @@
 import React from "react";
+import NavBar from "./Components/NavBar";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const App = () => {
-  return <div>App</div>;
+  useGSAP();
+  return (
+    <>
+      <NavBar></NavBar>
+    </>
+  );
 };
 
 export default App;
