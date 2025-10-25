@@ -15,11 +15,15 @@
   max-width: none;
   width: 120%;
   top: -42%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (min-width: 640px) {
   .imageContainer {
     width: 364px;
+  }
+  .image {
     top: -55%;
   }
 }

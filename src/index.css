@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-* {
-  /* object-fit: cover; */
-}
-
 body {
   background-color: #f0f0f0;
   font-family: "Outfit", sans-serif;
@@ -12,7 +8,7 @@ body {
 .heroGrid {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 40vh 1fr;
+  grid-template-rows: 25vh 1fr;
   /* grid-template-areas:
     "heading"
     "image"; */

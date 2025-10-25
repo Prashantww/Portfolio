@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <header className="h-[100vh]">
-        <div className="h-[90%] flex flex-col justify-between">
+        <div className="xl:h-[90%] xl:flex flex-col justify-between">
           <NavBar></NavBar>
           <div className="heroGrid">
             <div className="mt-[60px] ml-[35px] md:ml-[55px] xl:mt-[30px]">
