@@ -8,7 +8,7 @@ import HeroImage from "./Components/HeroImage";
 const App = () => {
   useGSAP();
   return (
-    <>
+    <div className="h-[2050vh]">
       <header className="h-[100vh]">
         <div className="xl:h-[90%] xl:flex flex-col justify-between">
           <NavBar></NavBar>
@@ -22,7 +22,7 @@ const App = () => {
           </div>
         </div>
       </header>
-    </>
+    </div>
   );
 };
 
