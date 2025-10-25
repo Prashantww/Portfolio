@@ -1,6 +1,33 @@
 @import "tailwindcss";
 
+* {
+  /* object-fit: cover; */
+}
+
 body {
   background-color: #f0f0f0;
   font-family: "Outfit", sans-serif;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40vh 1fr;
+  /* grid-template-areas:
+    "heading"
+    "image"; */
+}
+
+@media (min-width: 768px) {
+  .heroGrid {
+    grid-template-rows: minmax(450px, 40vh) 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 450px;
+  }
 }

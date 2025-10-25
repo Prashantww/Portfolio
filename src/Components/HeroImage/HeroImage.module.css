@@ -1,0 +1,35 @@
+.imageContainer {
+  aspect-ratio: 1/1;
+  width: calc(100% -70px);
+  /* background-color: red; */
+  margin: 0 35px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  max-width: none;
+  width: 120%;
+  top: -42%;
+}
+
+@media (min-width: 640px) {
+  .imageContainer {
+    width: 364px;
+    top: -55%;
+  }
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    width: 447px;
+    margin: 0 55px;
+  }
+  .image {
+    width: 572px;
+  }
+}
