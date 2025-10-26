@@ -14,6 +14,17 @@ body {
     "image"; */
 }
 
+header h3 {
+  font-size: 23px;
+  font-weight: 500;
+  overflow: hidden;
+  line-height: 1;
+}
+
+span {
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   .heroGrid {
     grid-template-rows: minmax(450px, 40vh) 1fr;

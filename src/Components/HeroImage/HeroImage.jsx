@@ -31,7 +31,7 @@ const HeroImage = () => {
             start: "bottom 70%",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       },
@@ -43,7 +43,7 @@ const HeroImage = () => {
             start: "bottom 90%",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       },
@@ -55,7 +55,7 @@ const HeroImage = () => {
             start: "bottom 80%",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       },
@@ -67,7 +67,7 @@ const HeroImage = () => {
             start: "bottom 95%",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       },
