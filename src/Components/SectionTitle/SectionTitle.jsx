@@ -20,7 +20,7 @@ const SectionTitle = ({ children, textAlignment = "left" }) => {
       scrollTrigger: {
         trigger: titleRef.current,
         start: "top bottom",
-        markers: true,
+        // markers: true,
       },
     });
   });

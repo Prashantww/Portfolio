@@ -6,11 +6,14 @@ import MainHeading from "./Components/MainHeading";
 import HeroImage from "./Components/HeroImage";
 import { CustomEase } from "gsap/CustomEase";
 import SectionTitle from "./Components/SectionTitle";
+import { HiArrowLongDown } from "react-icons/hi2";
 
 gsap.registerPlugin(CustomEase);
 
 const App = () => {
-  const scrollDownRef = useRef();
+  const scrollDownRef = useRef(null);
+  const arrowRef = useRef(null);
+  const arrowTriggerRef = useRef(null);
 
   useGSAP(() => {
     gsap.from(scrollDownRef.current, {
@@ -18,6 +21,35 @@ const App = () => {
       duration: 1.6,
       delay: 0.5,
       ease: CustomEase.create("custom", "M0,0 C0.503,0 0.091,1 1,1 "),
+    });
+
+    gsap.from(arrowRef.current, {
+      opacity: 0,
+      duration: 1.3,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: arrowTriggerRef.current,
+        start: "top bottom",
+        // markers: true,
+      },
+    });
+
+    const tl = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 0.5,
+    });
+
+    tl.to(arrowRef.current, {
+      y: -10,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
+    tl.to(arrowRef.current, {
+      y: 10,
+      duration: 1,
+      ease: "bounce.out",
+      // delay: 0.2,
     });
   });
   return (
@@ -39,11 +71,19 @@ const App = () => {
         </h3>
       </header>
       <main>
-        <div className="mt-[64px] md:mt-[100px] xl:mt-[70px]">
+        <div
+          ref={arrowTriggerRef}
+          className="mt-[64px] md:mt-[100px] xl:mt-[70px] flex flex-col items-center"
+        >
           <SectionTitle textAlignment="center">
             Featured <br />
             work
           </SectionTitle>
+          <div className="mt-[15px] md:mt-[30px]">
+            <div ref={arrowRef}>
+              <HiArrowLongDown className="text-[22px] md:text-[30px]" />
+            </div>
+          </div>
         </div>
       </main>
     </div>
