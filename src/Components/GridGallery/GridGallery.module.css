@@ -1,11 +1,63 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "portfolio"
+    "hackUnited"
+    "testimonial"
+    "nFT";
+  gap: 5px;
+  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .imgs {
-  background-color: rgb(222, 131, 255);
+  width: 100%;
+
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .portfolio {
   aspect-ratio: 420/227;
+  grid-area: portfolio;
 }
 
-.gridContainer {
-  grid-template-columns: calc(100% - (40 * 2) px);
+.hackUnited {
+  aspect-ratio: 103/72;
+  grid-area: hackUnited;
+}
+
+.nFT {
+  aspect-ratio: 206/319;
+  grid-area: nFT;
+}
+
+.testimonial {
+  aspect-ratio: 412/335;
+  grid-area: testimonial;
+  background-color: rgb(222, 131, 255);
+}
+
+@media (min-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-areas:
+      "portfolio portfolio"
+      "hackUnited nFT"
+      "testimonial nFT";
+    gap: 15px;
+    padding: 0 100px;
+  }
+
+  .imgs {
+    border-radius: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gridContainer {
+    padding: 0 220px;
+  }
 }

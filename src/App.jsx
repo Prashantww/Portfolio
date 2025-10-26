@@ -117,7 +117,9 @@ const App = () => {
             </p>
           </section>
           <section className="w-full flex flex-col items-center">
-            <GridGallery></GridGallery>
+            <div className="w-full mt-[50px] md:mt-[70px] lg:mt-[80px] xl:mt[50px]">
+              <GridGallery></GridGallery>
+            </div>
           </section>
         </div>
       </main>
