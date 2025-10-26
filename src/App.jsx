@@ -7,8 +7,10 @@ import HeroImage from "./Components/HeroImage";
 import { CustomEase } from "gsap/CustomEase";
 import SectionTitle from "./Components/SectionTitle";
 import { HiArrowLongDown } from "react-icons/hi2";
+import { SplitText } from "gsap/SplitText";
+import GridGallery from "./Components/GridGallery";
 
-gsap.registerPlugin(CustomEase);
+gsap.registerPlugin(CustomEase, SplitText);
 
 const App = () => {
   const scrollDownRef = useRef(null);
@@ -26,7 +28,7 @@ const App = () => {
     gsap.from(arrowRef.current, {
       opacity: 0,
       duration: 1.3,
-      delay: 0.2,
+      delay: 1,
       scrollTrigger: {
         trigger: arrowTriggerRef.current,
         start: "top bottom",
@@ -36,7 +38,7 @@ const App = () => {
 
     const tl = gsap.timeline({
       repeat: -1,
-      repeatDelay: 0.5,
+      repeatDelay: 1,
     });
 
     tl.to(arrowRef.current, {
@@ -50,6 +52,28 @@ const App = () => {
       duration: 1,
       ease: "bounce.out",
       // delay: 0.2,
+    });
+
+    document.fonts.ready.then(() => {
+      const split = SplitText.create(".flexingPara", {
+        type: "lines",
+        mask: "lines",
+        onSplit(self) {
+          gsap.from(self.lines, {
+            y: "100%",
+            duration: 1,
+            stagger: 0.05,
+            ease: "power2.out",
+            // delay: 1,
+            scrollTrigger: {
+              trigger: ".flexingPara",
+              start: "top 87%",
+              // markers: true,
+            },
+            // onComplete: () => self.revert(),
+          });
+        },
+      });
     });
   });
   return (
@@ -71,19 +95,30 @@ const App = () => {
         </h3>
       </header>
       <main>
-        <div
-          ref={arrowTriggerRef}
-          className="mt-[64px] md:mt-[100px] xl:mt-[70px] flex flex-col items-center"
-        >
-          <SectionTitle textAlignment="center">
-            Featured <br />
-            work
-          </SectionTitle>
-          <div className="mt-[15px] md:mt-[30px]">
-            <div ref={arrowRef}>
-              <HiArrowLongDown className="text-[22px] md:text-[30px]" />
+        <div className="w-full flex flex-col items-center">
+          <section className="w-full flex flex-col items-center">
+            <div
+              ref={arrowTriggerRef}
+              className="mt-[140px] md:mt-[100px] xl:mt-[70px] flex flex-col items-center"
+            >
+              <SectionTitle textAlignment="center">
+                Featured <br />
+                work
+              </SectionTitle>
+              <div className="mt-[15px] md:mt-[30px]">
+                <div ref={arrowRef}>
+                  <HiArrowLongDown className="text-[22px] md:text-[30px]" />
+                </div>
+              </div>
             </div>
-          </div>
+            <p className="flexingPara mt-[12px] md:mt-[24px]">
+              The combination of my passion for design, code & interaction
+              positions me in a unique place in the web design world.
+            </p>
+          </section>
+          <section className="w-full flex flex-col items-center">
+            <GridGallery></GridGallery>
+          </section>
         </div>
       </main>
     </div>

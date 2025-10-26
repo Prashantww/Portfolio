@@ -9,9 +9,6 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 25vh 1fr;
-  /* grid-template-areas:
-    "heading"
-    "image"; */
 }
 
 header h3 {
@@ -23,6 +20,14 @@ header h3 {
 
 span {
   display: inline-block;
+}
+
+.flexingPara {
+  text-align: center;
+  width: 365px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #343434;
 }
 
 @media (min-width: 768px) {

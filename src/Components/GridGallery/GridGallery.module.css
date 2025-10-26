@@ -1,0 +1,11 @@
+.imgs {
+  background-color: rgb(222, 131, 255);
+}
+
+.portfolio {
+  aspect-ratio: 420/227;
+}
+
+.gridContainer {
+  grid-template-columns: calc(100% - (40 * 2) px);
+}
