@@ -1,0 +1,23 @@
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 90.5%;
+  color: #2a2a2a;
+}
+
+.wordMask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 85px;
+  }
+}
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 100px;
+  }
+}

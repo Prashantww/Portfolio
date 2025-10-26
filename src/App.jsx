@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import MainHeading from "./Components/MainHeading";
 import HeroImage from "./Components/HeroImage";
 import { CustomEase } from "gsap/CustomEase";
+import SectionTitle from "./Components/SectionTitle";
 
 gsap.registerPlugin(CustomEase);
 
@@ -15,13 +16,13 @@ const App = () => {
     gsap.from(scrollDownRef.current, {
       y: 100,
       duration: 1.6,
-      delay: 1.5,
+      delay: 0.5,
       ease: CustomEase.create("custom", "M0,0 C0.503,0 0.091,1 1,1 "),
     });
   });
   return (
     <div className="h-[2050vh]">
-      <header className="h-[100vh]">
+      <header className="xl:h-[100vh]">
         <div className="xl:h-[90%] xl:flex flex-col justify-between">
           <NavBar></NavBar>
           <div className="heroGrid">
@@ -37,6 +38,14 @@ const App = () => {
           <span ref={scrollDownRef}>Scroll Down</span>
         </h3>
       </header>
+      <main>
+        <div className="mt-[64px] md:mt-[100px] xl:mt-[70px]">
+          <SectionTitle textAlignment="center">
+            Featured <br />
+            work
+          </SectionTitle>
+        </div>
+      </main>
     </div>
   );
 };
