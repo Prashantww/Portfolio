@@ -37,7 +37,7 @@
 .testimonial {
   aspect-ratio: 412/335;
   grid-area: testimonial;
-  background-color: rgb(222, 131, 255);
+  background-color: #3c289d;
 }
 
 @media (min-width: 1024px) {
@@ -56,7 +56,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .gridContainer {
     padding: 0 220px;
   }
