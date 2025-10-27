@@ -39,7 +39,7 @@ While the layout stays minimal, the motion architecture is complex — using **t
 
 ## Project Status
 
-> 🚧 **Currently in Progress**  
+> **Currently in Progress**  
 > Core structure and animation systems are in place.  
 > Upcoming additions:
 
