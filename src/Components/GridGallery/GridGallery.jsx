@@ -1,9 +1,30 @@
 import React from "react";
+import { useRef } from "react";
 import styles from "./GridGallery.module.css";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const GridGallery = () => {
+  const gridContainerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(gridContainerRef.current.querySelectorAll("img"), {
+      y: 70,
+      scrollTrigger: {
+        trigger: gridContainerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        markers: true,
+        scrub: true,
+      },
+    });
+  });
+
   return (
-    <div className={styles.gridContainer}>
+    <div ref={gridContainerRef} className={styles.gridContainer}>
       <div className={`${styles.imgs} ${styles.portfolio}`}>
         <img src="/Images/portfolio.png" alt="" />
       </div>
