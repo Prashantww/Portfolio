@@ -11,15 +11,25 @@ const GridGallery = () => {
   const gridContainerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.to(gridContainerRef.current.querySelectorAll("img"), {
-      y: 70,
-      scrollTrigger: {
-        trigger: gridContainerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        markers: true,
-        scrub: true,
-      },
+    const parents = gridContainerRef.current.querySelectorAll(
+      `.${styles.imgs}`
+    );
+
+    parents.forEach((parent) => {
+      const img = parent.querySelector("img");
+
+      if (!img) return;
+
+      gsap.to(img, {
+        y: 70,
+        scrollTrigger: {
+          trigger: parent,
+          start: "top bottom",
+          end: "bottom top",
+          markers: true,
+          scrub: true,
+        },
+      });
     });
   });
 
