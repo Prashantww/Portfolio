@@ -48,3 +48,10 @@ While the layout stays minimal, the motion architecture is complex — using **t
 - Mobile motion optimization
 - Portfolio project cards with hover effects
 - Footer
+
+## Contact
+
+If you’d like to connect or discuss a project, reach me here:
+
+- **Twitter:** [@prashant_kvian](https://x.com/prashant_kvian)
+- **Email:** prashant1warghude@gmail.com
